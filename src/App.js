@@ -5,15 +5,11 @@ import { useState } from 'react';
 function App() {
   let [choices, choicesChange] = useState(["✊", "✌️", "✋"]);
   let [choicesComputer, choicesComputerChange] = useState("✊");
-  let [checkWinText, checkWinTextChange] = useState("");
+  let [checkWinText, checkWinTextChange] = useState("START");
   let[scoreComputer, scoreComputerChange] = useState(0);
   let[scorePlayer, scorePlayerChange] = useState(0);
 
 
-  // function likeButton(){
-  //   likeChange(like +1)
-  //   console.log("clicked")
-  // }
   const randNum = Math.floor(Math.random() * 3);
   let computerChoice = choices[randNum]
   function computerTurn()
@@ -23,26 +19,27 @@ function App() {
 
   function checkWinCondition(playerChoice)
   {
+    const winText = <h1 style={{ color: 'green', fontSize: '48px' }}>YOU WIN</h1>
+    const loseText = <h1 style={{ color: 'red', fontSize: '48px' }}>YOU LOSE</h1>
+    const drawText = <h1 style={{ color: '#FFCE51', fontSize: '48px' }}>DRAW</h1>
     console.log( playerChoice, computerChoice)
 
      if(playerChoice == computerChoice)
      {
-      checkWinTextChange("DRAW");
+      checkWinTextChange(drawText);
      } else if (
       (playerChoice === "✊" && computerChoice === "✌️") ||
       (playerChoice === "✌️" && computerChoice === "✋") ||
       (playerChoice === "✋" && computerChoice === "✊")
     ) {
-      checkWinTextChange("YOU WIN");
+      checkWinTextChange(winText);
       scorePlayerChange(scorePlayer + 1);
     } else {
-      checkWinTextChange("YOU LOSE");
+      checkWinTextChange(loseText);
       scoreComputerChange(scoreComputer + 1);
     }
 
   }
-
-
   return (
     <div className="App">
       <div className="black-nav">
@@ -51,15 +48,24 @@ function App() {
       <div className='body'>
         <div className='player-computer-div'>
           <div className='computer-container'>
-          <h1>Computer</h1>
+          <h4>Computer</h4>
             <div className='card-container'>
-            
               <div className='card-icon'>
-              <p>{ choicesComputer }</p>
+                <p>{ choicesComputer }</p>
               </div>
             </div>
           </div>
         <div>
+          <div className='player-container'>
+            <h4>Player</h4>
+            <div className='card-container'>
+              <div className='card-icon'>
+                <p>{ choices[0] }</p>
+              </div>
+            </div>
+          </div> 
+        </div>
+        </div>
         <div className='score'>
             <div className='score-text'>
               <h1>{ scoreComputer }</h1>
@@ -73,18 +79,7 @@ function App() {
         </div>
         <div className='win-text'>
           <h1>{checkWinText}</h1></div>
-        </div>
-          <div className='player-container'>
-          <h1>Player</h1>
-            <div className='card-container'>
-            
-              <div className='card-icon'>
-              <p>{ choices[0] }</p>
-              </div>
 
-            </div>
-          </div> 
-        </div>
 
         <div className='buttons-group'>
           <div className='button-card'><span onClick={ ()=> {
@@ -111,7 +106,7 @@ function App() {
         </div>
 
         <div className='game-rule'>
-          <h1>Rules</h1>
+          <h4>Rules</h4>
         <div className='rules'>
           <p>Welcome to Shifumi Game game. 
           The rules are simple: paper wins against rock; and scissors wins against paper. 
@@ -121,13 +116,8 @@ function App() {
         </div>
         </div>
 
-        
 
-
-
-
-
-
+      
       </div>
     </div>
   );
