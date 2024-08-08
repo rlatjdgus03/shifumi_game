@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/shifumi_game/static/css/main.f26aaa68.css",
-    "main.js": "/shifumi_game/static/js/main.7c0b4b07.js",
+    "main.css": "/shifumi_game/static/css/main.847304d3.css",
+    "main.js": "/shifumi_game/static/js/main.b0251484.js",
     "static/js/453.a5a72b74.chunk.js": "/shifumi_game/static/js/453.a5a72b74.chunk.js",
     "static/media/logo.svg": "/shifumi_game/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/shifumi_game/index.html",
-    "main.f26aaa68.css.map": "/shifumi_game/static/css/main.f26aaa68.css.map",
-    "main.7c0b4b07.js.map": "/shifumi_game/static/js/main.7c0b4b07.js.map",
+    "main.847304d3.css.map": "/shifumi_game/static/css/main.847304d3.css.map",
+    "main.b0251484.js.map": "/shifumi_game/static/js/main.b0251484.js.map",
     "453.a5a72b74.chunk.js.map": "/shifumi_game/static/js/453.a5a72b74.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f26aaa68.css",
-    "static/js/main.7c0b4b07.js"
+    "static/css/main.847304d3.css",
+    "static/js/main.b0251484.js"
   ]
 }
